@@ -14,7 +14,7 @@ export const getAllNotesSchema = {
 
 const objectIdValidator = (value, helpers) => {
   if (!isValidObjectId(value)) {
-    return helpers.massage("Invalid note ID format");
+    return helpers.message("Invalid note ID format");
   }
   return value;
 };
