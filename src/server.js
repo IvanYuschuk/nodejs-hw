@@ -7,7 +7,8 @@ import { notFoundHandler } from "./middleware/notFoundHandler.js";
 import { errorHandler } from "./middleware/errorHandler.js";
 import notesRouter from "./routes/notesRoutes.js";
 import { errors } from "celebrate";
-
+import authRouter from "./routes/authRoutes.js";
+import cookieParser from "cookie-parser";
 
 const port = process.env.PORT ?? 3000;
 
@@ -16,8 +17,10 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 app.use(logger);
+app.use(cookieParser());
 
 app.use(notesRouter);
+app.use(authRouter);
 
 app.use(notFoundHandler);
 
