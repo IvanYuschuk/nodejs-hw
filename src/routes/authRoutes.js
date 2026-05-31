@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { loginUser, logoutUser, refreshUserSession, registerUser } from "../controllers/authControllers.js";
+import { loginUser, logoutUser, refreshUserSession, registerUser } from "../controllers/authController.js";
 import { celebrate } from "celebrate";
 import { registerUserSchema, loginUserSchema } from "../validations/authValidation.js";
 
