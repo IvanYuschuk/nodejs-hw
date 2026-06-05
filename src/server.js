@@ -9,6 +9,7 @@ import notesRouter from "./routes/notesRoutes.js";
 import { errors } from "celebrate";
 import authRouter from "./routes/authRoutes.js";
 import cookieParser from "cookie-parser";
+import userRouter from "./routes/userRoutes.js";
 
 const port = process.env.PORT ?? 3000;
 
@@ -21,6 +22,7 @@ app.use(cookieParser());
 
 app.use(notesRouter);
 app.use(authRouter);
+app.use(userRouter);
 
 app.use(notFoundHandler);
 
