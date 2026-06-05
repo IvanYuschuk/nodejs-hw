@@ -9,7 +9,7 @@ export const updateUserAvatar = async (req, res) => {
     throw createHttpError(400, "No file");
   }
 
-  const result = saveFileToCloudinary(file.buffer, user._id);
+  const result = await saveFileToCloudinary(file.buffer, user._id);
 
   const updatedUser = await User.findOneAndUpdate({ _id: user._id }, { avatar: result.secure_url }, { returnDocument: "after" });
   console.log(updatedUser);
